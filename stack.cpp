@@ -38,9 +38,12 @@ void Print()
 
 }
 int main() {
-	push(1); Print();
-	push(2); Print();
-	push(3); Print();
-	push(4); Print();
+	push(1); 
+	push(2); 
+	push(3); 
+	push(4); 
+	
+	pop();
+	Print();
 	return 0;
 }
