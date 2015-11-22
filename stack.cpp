@@ -37,6 +37,10 @@ void Print()
     }
 
 }
+bool isEmpty() {
+    if(top == NULL) return true;
+    else return false;
+}
 int main() {
 	push(1); 
 	push(2); 
