@@ -9,22 +9,42 @@ struct BSTNode {
 };
 
 BSTNode* createBSTNode(int data) {
-    BSTNode* root = new BSTNode();
+    BSTNode* newNode = new BSTNode();
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
 }
 
 BSTNode* insertBSTNode(BSTNode* root, int data) {
-    BSTNode* root = new BSTNode();
-    
+
     if(root == NULL) {
         root = createBSTNode(data);
+        return root;
     }
-    else if(data < root->data) {
+    else if(data <= root->data) {
         root ->left = insertBSTNode(root->left, data);
     }
     else {
         root ->right = insertBSTNode(root->right, data);
     } 
     return root;
+}
+
+bool searchBST(BSTNode* root, int data) {
+
+    if(root == NULL) {
+       return false;
+    }
+    else if(data == root->data) {
+       return true;
+    }
+    else if (data <= root->data) {
+        return searchBST(root->left, data);
+    } 
+    else  {
+        return searchBST(root->left, data);
+    } 
 }
 
 int main()
@@ -34,4 +54,6 @@ int main()
       root = insertBSTNode(root,10);
       root = insertBSTNode(root,30);
       
+      if(searchBST(root,120) == true) cout << "Found" <<endl;
+      else cout << "not found!";
 }
