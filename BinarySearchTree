@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+struct BSTNode {
+    int data;
+    BSTNode *left;
+    BSTNode *right;
+};
+
+BSTNode* createBSTNode(int data) {
+    BSTNode* root = new BSTNode();
+}
+
+BSTNode* insertBSTNode(BSTNode* root, int data) {
+    BSTNode* root = new BSTNode();
+    
+    if(root == NULL) {
+        root = createBSTNode(data);
+    }
+    else if(data < root->data) {
+        root ->left = insertBSTNode(root->left, data);
+    }
+    else {
+        root ->right = insertBSTNode(root->right, data);
+    } 
+    return root;
+}
+
+int main()
+{
+      BSTNode *root = NULL;
+      root = insertBSTNode(root,20);
+      root = insertBSTNode(root,10);
+      root = insertBSTNode(root,30);
+      
+}
